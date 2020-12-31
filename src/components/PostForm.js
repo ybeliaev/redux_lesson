@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {connect} from 'react-redux'
 import {createPost, showAlert} from '../redux/actions'
 import {Alert} from './Alert'
@@ -17,24 +17,24 @@ class PostForm extends React.Component {
 
     const {title} = this.state
 
-    if (!title.trim()) {
-      return this.props.showAlert('Название поста не может быть пустым')
-    }
+    // if (!title.trim()) {
+    //   return this.props.showAlert('Название поста не может быть пустым')
+    // }
 
     const newPost = {
       title, id: Date.now().toString()
     }
 
-    this.props.createPost(newPost)
+    // this.props.createPost(newPost)
     this.setState({ title: '' })
+    console.log("this.state.title: ",this.state.title)
 
   }
 
   changeInputHandler = event => {
     event.persist()
-    this.setState(prev => ({...prev, ...{
-      [event.target.name]: event.target.value
-    }}))
+    this.setState(prev => ({...prev, ...{[event.target.name]: event.target.value}  })
+    )
   }
 
   render() {
@@ -60,12 +60,7 @@ class PostForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = {
-  createPost, showAlert
-}
 
-const mapStateToProps = state => ({
-  alert: state.app.alert
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm)
+export default PostForm
+
