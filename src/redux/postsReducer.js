@@ -1,3 +1,4 @@
+
 const initialState = {
     posts: [],
     fetchPosts: []
