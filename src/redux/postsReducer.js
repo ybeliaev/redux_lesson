@@ -2,7 +2,7 @@ import { CREATE_POST, FETCH_POSTS } from "./types";
 
 const initialState = {
     posts: [],
-    fetchPosts: []
+    fetchedPosts: []
 };
 
 export const postsReducer = (state=initialState, action) => {
