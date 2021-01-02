@@ -8,4 +8,12 @@ const Posts = ({syncPosts}) => {
   }
   return syncPosts.map(post => <Post post={post} key={post.id} />)
 }
-export default Posts
+
+const mapStateToProps = state => {
+  console.log(state) // posts: {posts: Array(0), fetchPosts: Array(0)}
+  return {
+    syncPosts: state.posts.posts
+  }
+}
+
+export default connect(mapStateToProps, null)(Posts)
