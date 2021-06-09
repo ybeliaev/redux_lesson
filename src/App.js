@@ -1,13 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { Profile } from './components'
 
-import { getPosts as getPostsAction } from './redux/modules/posts'
-
-function App({ posts, getPosts }) {
-    console.log({ posts })
-    return <div className="container"></div>
+function App() {
+    return (
+        <div className="App">
+            <Profile />
+        </div>
+    )
 }
 
-export default connect(({ posts }) => ({ posts }), {
-    getPosts: getPostsAction,
-})(App)
+export default App
