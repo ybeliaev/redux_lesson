@@ -7,7 +7,7 @@ import rootReducers from './modules'
 
 const configureStore = (reducers = {}, preLoaderState = {}, middlewares = []) =>
     createStore(
-        combineReducers(...rootReducers, ...reducers),
+        combineReducers({ ...rootReducers, ...reducers }),
         preLoaderState,
         compose(
             applyMiddleware(...middlewares, thunk, reduxLogger),

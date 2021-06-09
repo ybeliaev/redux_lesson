@@ -1,22 +1,9 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
 
-
-function App() {
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <button type="button" className="btn btn-primary">
-            COUNT: <span class="badge bg-secondary">4</span>
-          </button>
-        </div>
-        <div className="col">
-          Column
-        </div>
-      </div>
-    </div>
-    
-  );
+function App({ posts }) {
+    console.log({ posts })
+    return <div className="container"></div>
 }
 
-export default App;
+export default connect(({ posts }) => ({ posts }))(App)
