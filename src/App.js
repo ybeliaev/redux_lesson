@@ -11,7 +11,7 @@ import './App.css'
 function App() {
     return (
         <Provider store={store}>
-            <Row justify="center">
+            <Row>
                 <Col span={12}>
                     <Profile />
                 </Col>
