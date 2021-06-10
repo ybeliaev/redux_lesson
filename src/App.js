@@ -1,16 +1,24 @@
 import React from 'react'
+
 import { Provider } from 'react-redux'
 import { store } from './store'
 
 import { LoginForm, Profile } from './components'
 
+import { Row, Col } from 'antd'
+import './App.css'
+
 function App() {
     return (
         <Provider store={store}>
-            <div>
-                <Profile />
-                <LoginForm />
-            </div>
+            <Row justify="center">
+                <Col span={12}>
+                    <Profile />
+                </Col>
+                <Col span={12}>
+                    <LoginForm />
+                </Col>
+            </Row>
         </Provider>
     )
 }
