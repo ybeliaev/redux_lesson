@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Card, Col, Row } from 'antd'
+import { Card, Col, Row, Spin } from 'antd'
 import { postsActions } from '../../store/posts/action'
 
 export const Cards = () => {
