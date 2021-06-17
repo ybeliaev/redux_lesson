@@ -21,14 +21,14 @@ const tailLayout = {
 }
 
 export const LoginForm = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // dispatch = action dispatch function
     const onFinish = (values) => {
-        console.log('Success:', values)
         const profile = {
             username: values['username'],
             password: values['password'],
         }
         dispatch(profileAction.setProfile(profile))
+        console.log('Success:', values)
     }
 
     const onFinishFailed = (errorInfo) => {

@@ -4,7 +4,7 @@ func for change store
 import { profileActionTypes } from './actions'
 
 const initialState = {
-    profile: { username: 'John Doe' },
+    profile: { username: '' },
     theme: 'light',
 }
 
