@@ -1,10 +1,10 @@
 import React from 'react'
 import { Spin, Space } from 'antd'
 
-export const Loader = () => {
+export const Loader = ({ children, loading }) => {
     return (
-        <Space size="middle">
-            <Spin size="large" />
-        </Space>
+        <Spin tip="Loading..." size="large" spinning={loading}>
+            {children}
+        </Spin>
     )
 }
