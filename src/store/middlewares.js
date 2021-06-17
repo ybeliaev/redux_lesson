@@ -3,9 +3,17 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 const logger = (store) => (next) => (action) => {
     const state = store.getState()
-    console.log({ store, action })
+    console.log({ state, action })
 
     return next(action)
 }
 
-export const middlewares = composeWithDevTools(applyMiddleware(logger))
+const thunk = (store) => (next) => (action) => {
+    const { dispatch, getState } = store
+    if (typeof action === 'function') {
+        return action(dispatch, getState)
+    }
+    return next(action)
+}
+
+export const middlewares = composeWithDevTools(applyMiddleware(logger, thunk))
